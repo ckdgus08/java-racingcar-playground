@@ -49,8 +49,10 @@ public class CarRacingServiceTest {
         Car car = new Car("pobi");
         int result = car.move();
         int result2 = car.move();
+        int result3 = car.move();
         assertThat(result).isEqualTo(1);
         assertThat(result2).isEqualTo(2);
+        assertThat(result3).isEqualTo(3);
     }
 
 
