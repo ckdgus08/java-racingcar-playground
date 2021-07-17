@@ -15,7 +15,17 @@ public class Car {
         return carName;
     }
 
+    public int getDistance() {
+        return distance;
+    }
+
     public int move() {
         return ++distance;
+    }
+
+    public int controllWithTwoValue(double random, double movePercentage) {
+        if (random < movePercentage)
+            move();
+        return distance;
     }
 }

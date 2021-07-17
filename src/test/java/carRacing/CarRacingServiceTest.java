@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -53,6 +54,35 @@ public class CarRacingServiceTest {
         assertThat(result).isEqualTo(1);
         assertThat(result2).isEqualTo(2);
         assertThat(result3).isEqualTo(3);
+    }
+
+    @Test
+        // pobi : -
+        // honux : ---
+    void 자동차이름과_이동횟수를_특정형식으로_반환한다() {
+        Car car = new Car("pobi");
+        car.move();
+        car.move();
+        String result = Utils.parseCarToNameAndCount(car);
+        assertThat(result).isEqualTo("pobi : --");
+    }
+
+    @Test
+    void 우승자를_구한다() {
+        Car pobi = new Car("pobi");
+        pobi.move();
+        Car crong = new Car("crong");
+        crong.move();
+        crong.move();
+        Car honux = new Car("honux");
+        honux.move();
+        honux.move();
+        List<Car> cars = Arrays.asList(pobi, crong, honux);
+        Game game = new Game(cars, 5);
+
+        List<Car> result = game.getWinner();
+        assertThat(result.size()).isEqualTo(2);
+        assertThat(result).containsExactlyInAnyOrder(crong, honux);
     }
 
 
