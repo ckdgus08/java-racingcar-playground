@@ -3,6 +3,7 @@ package carRacing;
 public class Car {
 
     private String carName;
+    private int distance;
 
     public Car(String carName) {
         if (carName.length() > 5)
@@ -14,4 +15,7 @@ public class Car {
         return carName;
     }
 
+    public int move() {
+        return ++distance;
+    }
 }

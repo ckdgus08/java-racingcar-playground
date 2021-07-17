@@ -1,6 +1,7 @@
 package carRacing;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -41,6 +42,15 @@ public class CarRacingServiceTest {
     void 자동차이름은_6글자를_초과할수없다(String input) {
         assertThatThrownBy(() -> carRacingService.parseCarsFromNames(input))
                 .isInstanceOf(RuntimeException.class);
+    }
+
+    @Test
+    void 자동차를_이동한다() {
+        Car car = new Car("pobi");
+        int result = car.move();
+        int result2 = car.move();
+        assertThat(result).isEqualTo(1);
+        assertThat(result2).isEqualTo(2);
     }
 
 
