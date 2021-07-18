@@ -15,7 +15,7 @@ public class Position {
         this.position = position;
     }
 
-    public Position move(int random) {
+    public Position addWithRandom(int random) {
         if (random >= MOVE_LIMIT)
             return new Position(position + 1);
         return this;

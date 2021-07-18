@@ -26,13 +26,13 @@ public class PositionTest {
     @DisplayName("move함수의 매개변수가 4이상 일때 position이 1 증가한다.")
     void moveMoreThan4() {
         Position position = new Position();
-        assertThat(position.move(4)).isEqualTo(new Position(1));
+        assertThat(position.addWithRandom(4)).isEqualTo(new Position(1));
     }
 
     @Test
     @DisplayName("move함수의 매개변수가 3이하 일때 position 유지된다.")
     void moveLessThan4() {
         Position position = new Position();
-        assertThat(position.move(3)).isEqualTo(new Position(0));
+        assertThat(position.addWithRandom(3)).isEqualTo(new Position(0));
     }
 }
