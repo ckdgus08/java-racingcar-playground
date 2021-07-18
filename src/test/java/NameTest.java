@@ -19,8 +19,8 @@ public class NameTest {
     @DisplayName("자동차이름은 공백이 올 수 없다.")
     void validEmpty(String input) {
         assertThatThrownBy(
-                () -> new Name(input)
-        ).isInstanceOf(IllegalArgumentException.class);
+                () -> new Name(input))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @ParameterizedTest
